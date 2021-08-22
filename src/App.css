@@ -1,0 +1,568 @@
+body {
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+  width: 100vw !important;
+  height: 100vh;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+  background-color: #000 !important;
+  width: 100vw !important;
+}
+
+.none {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20vh;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 80px;
+  border: 3px solid rgb(117, 189, 223);
+  outline: none;
+  border-radius: 60px;
+  transition: 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-image: url(Images/Shrine.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 500;
+  margin-bottom: 20px;
+  filter: drop-shadow(0px 0px 80px rgba(255, 255, 255, 0.568));
+}
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 7px;
+  height: 72px;
+  width: 72px;
+  border-radius: 50%;
+  border: 1px solid rgb(117, 189, 223);
+  transition: 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-image: url("Images/Uchiha Logo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+.click {
+  position: relative;
+  bottom: 20vh;
+  margin-left: 18px;
+  font-family: monospace;
+  letter-spacing: 10px;
+  z-index: 50 !important;
+  color: rgba(255, 255, 255, 0.315);
+  animation: float 5s alternate-reverse linear infinite;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(105px) rotate(180deg);
+  background-image: url("Images/Itachi ms.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgb(43, 2, 2);
+  background-color: #000;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url(Images/uchiha-massacre.png);
+  border: 3px solid rgb(82, 14, 14);
+  margin-bottom: 20px;
+  transition: 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  filter: drop-shadow(0px 0px 40px rgba(255, 0, 0, 0.377));
+}
+.name {
+  position: absolute;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  filter: drop-shadow(0 0 700px rgba(224, 220, 220, 0.651));
+}
+.slashed,
+.notSlashed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50 !important;
+  text-shadow: 6px 6px 15px rgba(117, 87, 87, 0.5);
+  filter: url(#filth);
+}
+.slashed .top,
+.notSlashed .top,
+.slashed .bot,
+.slashedd .top,
+.slashedd .bot {
+  text-align: center;
+  font: 90px/100px arial;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.212);
+}
+
+.slashed .top:before,
+.slashed .bot:before {
+  content: attr(title);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.slashed .top,
+.notSlashed .top {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 0;
+  bottom: 50%;
+}
+.slashed .top:before,
+.notSlashed .top:before {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+}
+.slashed .bot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 5px;
+  bottom: 0;
+}
+.slashed .bot:before {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+}
+
+#itachi {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  height: 110vh;
+  width: 100%;
+  top: 0vh;
+  left: 0;
+  z-index: 20 !important;
+}
+.Itachi {
+  --animate-duration: 0.6s;
+}
+.uchihaItachi {
+  animation: grow 10s linear infinite alternate;
+}
+.Moon {
+  height: 100vh;
+  width: 100vw !important;
+  object-fit: cover;
+  z-index: 1;
+}
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.37);
+  z-index: 1 !important;
+  position: absolute;
+  top: 0;
+}
+#overlay1 {
+  z-index: 1;
+}
+#overlay3 {
+  background-color: rgba(0, 0, 0, 0.521);
+  z-index: 5;
+}
+#overlay4 {
+  background-color: rgba(0, 0, 0, 0.315);
+  z-index: 10 !important;
+}
+#overlay2 {
+  background-color: rgba(0, 0, 0, 0);
+}
+#Eyes {
+  height: 110vh;
+  width: 90vw;
+  animation: ZoomInOut 1.5s linear;
+}
+#sky {
+  height: 120vh;
+  width: 100vw;
+  animation: fadeIn 1s linear;
+}
+#rinnegan {
+  width: 200vh;
+  position: absolute;
+  top: -40vh;
+  z-index: 1;
+  mask-image: linear-gradient(
+    rgba(255, 255, 255, 0.734),
+    rgba(2, 2, 54, 0.768)
+  );
+  animation: rotate 10s linear infinite;
+  filter: drop-shadow(0px 0px 50px rgb(231, 136, 136));
+}
+#itachi2 {
+  height: 80vh;
+  position: absolute;
+  bottom: 0vh !important;
+  z-index: 4;
+  animation: pulse 5s ease-in-out alternate-reverse infinite;
+}
+#crows {
+  height: 100vh;
+  position: absolute;
+  top: 5vh;
+  z-index: 1;
+}
+#state3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bird {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  z-index: 3;
+  will-change: background-position;
+  -webkit-animation-name: fly-cycle;
+  animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(10);
+  animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.bird--one {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.bird--two {
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-delay: -0.75s;
+  animation-delay: -0.75s;
+}
+.bird--three {
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -0.25s;
+}
+.bird--four {
+  -webkit-animation-duration: 1.1s;
+  animation-duration: 1.1s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.bird--five {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.65s;
+}
+.bird--six {
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-delay: -0.75s;
+  animation-delay: -0.95s;
+}
+.bird--seven {
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -1.25s;
+}
+.bird--eight {
+  -webkit-animation-duration: 1.1s;
+  animation-duration: 1.1s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -1.5s;
+}
+
+.bird-container {
+  position: absolute;
+  height: 100vh;
+  top: 20%;
+  left: -10%;
+  z-index: 3 !important;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  -webkit-animation-name: fly-right-one;
+  animation-name: fly-right-one;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.bird-container--one {
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+  top: 0%;
+}
+.bird-container--two {
+  -webkit-animation-duration: 16s;
+  animation-duration: 16s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.bird-container--three {
+  -webkit-animation-duration: 14.6s;
+  animation-duration: 14.6s;
+  -webkit-animation-delay: 9.5s;
+  animation-delay: 9.5s;
+  top: 40%;
+}
+.bird-container--four {
+  -webkit-animation-duration: 16s;
+  animation-duration: 16s;
+  -webkit-animation-delay: 10.25s;
+  animation-delay: 10.25s;
+  top: 0%;
+}
+.bird-container--five {
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+  -webkit-animation-delay: 0;
+  animation-delay: 12.5;
+}
+.bird-container--six {
+  -webkit-animation-duration: 16s;
+  animation-duration: 16s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 15.75s;
+  top: 50%;
+}
+.bird-container--seven {
+  -webkit-animation-duration: 14.6s;
+  animation-duration: 14.6s;
+  -webkit-animation-delay: 9.5s;
+  animation-delay: 21s;
+  top: 30%;
+}
+.bird-container--eight {
+  -webkit-animation-duration: 16s;
+  animation-duration: 16s;
+  -webkit-animation-delay: 10.25s;
+  animation-delay: 24s;
+  top: 60%;
+}
+
+@-webkit-keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+@-webkit-keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@-webkit-keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+@keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+
+@keyframes ZoomInOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes grow {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+  25% {
+    transform: scale(1.025) translateY(2px);
+  }
+  50% {
+    transform: scale(1.05) translateY(4px);
+  }
+  75% {
+    transform: scale(1.075) translateY(8px);
+  }
+  100% {
+    transform: scale(1.1) translateY(10px);
+  }
+}
+
+@keyframes pulse {
+  from {
+    filter: drop-shadow(0px 0px 80px rgb(48, 7, 7)) grayscale(25%);
+    transform: scale(1.03);
+  }
+  to {
+    filter: drop-shadow(0px 0px 80px rgb(255, 0, 0)) grayscale(20%);
+    transform: scale(1);
+  }
+}
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
