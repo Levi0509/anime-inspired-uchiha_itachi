@@ -26,14 +26,14 @@ body {
   align-items: center;
 }
 
-.deskTog {
+input {
   cursor: pointer;
   position: fixed;
   bottom: 20vh;
   -webkit-appearance: none;
   appearance: none;
   width: 200px;
-  height: 80px;
+  height: 90px;
   border: 3px solid rgb(117, 189, 223);
   outline: none;
   border-radius: 60px;
@@ -46,13 +46,13 @@ body {
   margin-bottom: 20px;
   filter: drop-shadow(0px 0px 80px rgba(255, 255, 255, 0.568));
 }
-.deskTog::before {
+input::before {
   content: "";
   position: absolute;
   top: 0px;
   left: 7px;
-  height: 72px;
-  width: 72px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   border: 1px solid rgb(117, 189, 223);
   transition: 2s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -74,7 +74,7 @@ body {
   animation: float 5s alternate-reverse linear infinite;
 }
 
-.deskTog:checked::before {
+input:checked::before {
   transform: translateX(105px) rotate(180deg);
   background-image: url("Images/Itachi ms.jpg");
   background-position: center;
@@ -85,7 +85,7 @@ body {
   background-color: #000;
 }
 
-.deskTog:checked {
+input:checked {
   background-image: url(Images/uchiha-massacre.png);
   border: 3px solid rgb(82, 14, 14);
   margin-bottom: 20px;
@@ -185,10 +185,10 @@ body {
 .uchihaItachi {
   animation: grow 10s linear infinite alternate;
 }
-.Moon {
+.MoonRen {
   height: 100vh;
   width: 100vw !important;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 1;
 }
 .overlay {
